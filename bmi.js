@@ -17,7 +17,11 @@ document.getElementById("bmiform").addEventListener("submit", async function(e) 
         });
 
         if (!response.ok) throw new Error(`API error ${response.status}`);
-        const data = await response.json();
+       console.log(response);
+
+const data = await response.json();
+
+console.log(data);
         resultDiv.innerHTML = `<strong>BMI: ${bmi}</strong><br>${data.content[0].text}`;
     } catch (err) {
         resultDiv.textContent = `BMI: ${bmi} (insight unavailable: ${err.message})`;
