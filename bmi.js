@@ -6,7 +6,7 @@ document.getElementById("bmiform").addEventListener("submit", async function(e) 
     e.preventDefault();
     const wt = parseFloat(document.getElementById("wt").value);
     const ht = parseFloat(document.getElementById("ht").value);
-    ht=ht/100; 
+    
     const bmi = (wt / (ht * ht)).toFixed(2);
     const resultDiv = document.getElementById("result");
 
