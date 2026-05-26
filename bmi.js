@@ -21,7 +21,18 @@ document.getElementById("bmiform").addEventListener("submit", async function(e) 
 
         if (!response.ok) throw new Error(`API error ${response.status}`);
         const data = await response.json();
-        resultDiv.innerHTML = `<strong>BMI: ${bmi}</strong><br>${data.content[0].text}`;
+       resultDiv.innerHTML = `
+    <div class="advice-box">
+        <strong>BMI: ${bmi}</strong><br><br>
+
+        ${data.content[0].text
+            .replace(/\n/g, "<br>")
+            .replace(/\#\# (.*?)(<br>|$)/g, "<h3>$1</h3>")
+            .replace(/\# (.*?)(<br>|$)/g, "<h2>$1</h2>")
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        }
+    </div>
+`;
     } catch (err) {
         resultDiv.textContent = `BMI: ${bmi} (insight unavailable: ${err.message})`;
     }
