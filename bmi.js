@@ -5,7 +5,7 @@ const LAMBDA_URL = "https://zvsd7ryeh0.execute-api.eu-north-1.amazonaws.com/defa
 document.getElementById("bmiform").addEventListener("submit", async function(e) {
     e.preventDefault();
     const wt = parseFloat(document.getElementById("wt").value);
-    const ht = parseFloat(document.getElementById("ht").value)/4;
+    const ht = parseFloat(document.getElementById("ht").value)/100;
     
     const bmi = (wt / (ht * ht)).toFixed(2);
     const resultDiv = document.getElementById("result");
