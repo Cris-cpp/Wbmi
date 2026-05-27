@@ -1,6 +1,6 @@
 // Replace with your API Gateway URL after Lambda is deployed
 
-const LAMBDA_URL = "https://zvsd7ryeh0.execute-api.eu-north-1.amazonaws.com/default/bmi-insight";
+const LAMBDA_URL = "https://japb1e4776.execute-api.eu-north-1.amazonaws.com/default/wbmiforparastore";
 
 document.getElementById("bmiform").addEventListener("submit", async function(e) {
     e.preventDefault();
